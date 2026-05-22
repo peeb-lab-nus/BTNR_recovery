@@ -1,8 +1,8 @@
 # BTNR_recovery: Simulating the recovery of secondary forests of Bukit Timah, Singapore
 
-*Author:* Jun Ying Lim (jylim@nus.edu.sg), National University of Singapore, Singapore.
+**Author:** Jun Ying Lim (jylim@nus.edu.sg), National University of Singapore, Singapore.
 
-*Description*
+**Description**
 To simulate future forest composition, we constructed an individual-based simulation model. The model consisted of three main components: recruitment, mortality and growth. Vital rates for growth, recruitment and mortality were obtained from both the primary and secondary 2-hectare forest plots ("plot census data"). 
 
 Information on the priumary and secondary 2-hectare plots can be found [here](https://forestgeo.si.edu/explore-data/bukit-timah-termsconditionsrequest-forms). Full big tree data (all species) available on request.
@@ -16,22 +16,22 @@ The raw output files are too big to share here, and so have not been provided. H
 
 ## Data files
 The following data files are provided:
-* *Species trait information* (`species_trait.csv`): Data file containing taxonomic names and dispersal syndromes of target species.
-* *Big tree data* (`bigtree_init.rds`): Distribution and size of all big trees (>= 300 mm) of focal study species
-* *Bukit Timah polygon* (`BT_polygon.shp`): Spatial file containing the borders of the reserve. Necessary for simulations.
-* Simulation grid (`grid_btnr_1_2.rds`): Spatial file of 1.2 x 1.2 m grid cells that constrain population growth. Necessary for simulations.
-* *Habitat grid* (`grid_classification.rds`): Spatial file of 50 x 50 m grid cells for quantifying recolonisation rates. Necessary for summarising results but not for simulations.
+* **Species trait information** (`species_trait.csv`): Data file containing taxonomic names and dispersal syndromes of target species.
+* **Big tree data** (`bigtree_init.rds`): Distribution and size of all big trees (>= 300 mm) of focal study species
+* **Bukit Timah polygon** (`BT_polygon.shp`): Spatial file containing the borders of the reserve. Necessary for simulations.
+* **Simulation grid** (`grid_btnr_1_2.rds`): Spatial file of 1.2 x 1.2 m grid cells that constrain population growth. Necessary for simulations.
+* **Habitat grid** (`grid_classification.rds`): Spatial file of 50 x 50 m grid cells for quantifying recolonisation rates. Necessary for summarising results but not for simulations.
 
 ## Scripts
 ### Vital rates
 The following scripts calculate vital rates and/or generates the necessary parameter files.
 
-* *Growth rate* (`prep_growth_rate.R`): calculates growth rate for diameter class bins using census data
-* *Mortality rate* (`prep_mortality.R`): fits mortality model to census data and generates parameter estimates
-* *Mortality size threshold* (`prep_mortality_thresh.R`): assigns mortality size threshold
-* *Recruitment rate* (`prep_recruit_rate.R`): calculates recruitment rates from census data
-* *Recruitment distance* (`prep_recruit_dist.R`): assigns recruitment distances (low dispersal and high dispersal scenarios)
-* *Recruitment size threshold* (`prep_recruit_thresh.R`): assigns recruitment size threshold 
+* **Growth rate** (`prep_growth_rate.R`): calculates growth rate for diameter class bins using census data
+* **Mortality rate** (`prep_mortality.R`): fits mortality model to census data and generates parameter estimates
+* **Mortality size threshold** (`prep_mortality_thresh.R`): assigns mortality size threshold
+* **Recruitment rate** (`prep_recruit_rate.R`): calculates recruitment rates from census data
+* **Recruitment distance** (`prep_recruit_dist.R`): assigns recruitment distances (low dispersal and high dispersal scenarios)
+* **Recruitment size threshold** (`prep_recruit_thresh.R`): assigns recruitment size threshold 
 
 ### Generating initial conditions and simulating recolonsation (`utils.R`,`sim_hpc.R`)
 As we only had data on the distribution and size of large trees, we had to first generate the model starting conditions. This was accomplished by running the simulation model until the first new recruit reached 300 mm in diameter. "Original" big trees are immune from growth and mortality in this phase so they can serve to empirically constrain model starting conditions. Code to perform all demographic simulations can be found in `utils.R`
