@@ -1,0 +1,15 @@
+mort_rates_st_combined.csv
+plot_sim.R
+process_sim_output_hpc.R
+bukittimah_primary.stem1.Rdata
+bukittimah_primary.stem2.Rdata
+bukittimah_primary.stem4.Rdata
+bukittimah_primary.stem5.Rdata
+bukittimah_primary.stem6.Rdata
+bukittimah_primary.stem7.Rdata
+bukittimah_secondary.stem1.Rdata
+bukittimah_secondary.stem2.Rdata
+bukittimah_secondary.stem3.Rdata
+bukittimah_secondary.stem4.Rdata
+CTFSRPackage/**
+**.DS_Store
